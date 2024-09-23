@@ -8,6 +8,7 @@ import (
 	"github.com/go-resty/resty/v2"
 	"log"
 	"net/url"
+	"strings"
 )
 
 type SikluData struct {
@@ -106,12 +107,17 @@ func (c *Client) Close() {
 	}
 }
 
-func (c *Client) GetInfo(x string) (SikluData, error) {
+func (c *Client) GetInfo(sections []string) (SikluData, error) {
 	var data SikluData
+
+	if len(sections) == 0 {
+		return data, errors.New("no sections specified")
+	}
 
 	// You cannot use SetQueryParams() because it will not preserve the order of the query parameters
 	// so we manually build the query string
-	q := fmt.Sprintf("https://%s/main/web.cgi?%s", c.Host, url.PathEscape("mo-info system ; ip ; license ; event-cfg ; sw ;"))
+	q := fmt.Sprintf("https://%s/main/web.cgi?%s", c.Host,
+		url.PathEscape("mo-info "+strings.Join(sections, " ; ")))
 	resp, err := c.httpClient.R().SetHeader("accept", "*/*").Get(q)
 	if err != nil {
 		return data, err
