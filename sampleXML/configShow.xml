@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reply>
+    <request>simple-command copy running-configuration display</request>
+    <end-code>ok</end-code><text>
+    User:
+
+    # license configuring
+    set  license oam config disable
+    set  license encryption config disable
+    set  license data-rate config 1000
+    set  license resiliency config disable
+    set  license extend-mm config disable
+    set  license pse config disable
+
+    # syslog configuring
+
+    # net-config configuring
+    set net-config config-file disable config-error-restart-delay 60 dhcp-relay disable
+
+    # password-strength configuring
+    set password-strength  min-length 8 min-difference 1
+
+    # pfc configuring
+
+    # modulation configuring
+    set modulation 250Mhz qpsk1 cinr-low -128 cinr-high 12 backoff 5
+    set modulation 250Mhz qpsk2 cinr-low 11 cinr-high 16 backoff 8
+    set modulation 250Mhz qpsk3 cinr-low 12 cinr-high 18 backoff 8
+    set modulation 250Mhz qam16 cinr-low 17 cinr-high 22 backoff 8
+    set modulation 250Mhz qam64 cinr-low 21 cinr-high 127 backoff 8
+    set modulation 500Mhz qpsk1 cinr-low -128 cinr-high 15 backoff 5
+    set modulation 500Mhz qpsk2 cinr-low 11 cinr-high 16 backoff 8
+    set modulation 500Mhz qpsk3 cinr-low 12 cinr-high 18 backoff 8
+    set modulation 500Mhz qam16 cinr-low 17 cinr-high 22 backoff 8
+    set modulation 500Mhz qam64 cinr-low 21 cinr-high 127 backoff 8
+
+    # modulation-arq configuring
+    set modulation-arq 250Mhz qpsk1 cinr-low -128 cinr-high 11 backoff 5
+    set modulation-arq 250Mhz qpsk2 cinr-low 10 cinr-high 15 backoff 8
+    set modulation-arq 250Mhz qpsk3 cinr-low 11 cinr-high 17 backoff 8
+    set modulation-arq 250Mhz qam16 cinr-low 16 cinr-high 20 backoff 8
+    set modulation-arq 250Mhz qam64 cinr-low 19 cinr-high 127 backoff 8
+    set modulation-arq 500Mhz qpsk1 cinr-low -128 cinr-high 14 backoff 5
+    set modulation-arq 500Mhz qpsk2 cinr-low 10 cinr-high 15 backoff 8
+    set modulation-arq 500Mhz qpsk3 cinr-low 11 cinr-high 17 backoff 8
+    set modulation-arq 500Mhz qam16 cinr-low 16 cinr-high 20 backoff 8
+    set modulation-arq 500Mhz qam64 cinr-low 19 cinr-high 127 backoff 8
+
+    # fdb configuring
+
+    # pcp-write-profile configuring
+
+    # rf configuring
+    set rf role auto
+    set rf mode adaptive
+    set rf rx-link-id 0 tx-link-id 0
+    set rf frequency 500 74375
+    set rf tx-power 7
+    set rf lowest-modulation qpsk1
+    set rf long-range-mode normal
+    set rf atpc enable atpc-min-tx-power -35 atpc-target-rssi -35 atpc-min-cinr -128
+
+    # configuring eth
+    set eth host  admin up
+    set eth host  auto-neg enabled pcp-write-profile-id none pfc-mode disable
+    set eth host   alarm-suppression disable
+    set eth host  mirroring-source none
+    set eth host  mirroring-mode disabled
+    set eth eth0  admin up
+    set eth eth0  auto-neg enabled pcp-write-profile-id none pfc-mode disable
+    set eth eth0   alarm-suppression disable
+    set eth eth0  mirroring-source none
+    set eth eth0  mirroring-mode disabled
+    set eth eth1  admin up
+    set eth eth1  eth-type 1000fd
+    set eth eth1  alarm-propagation disabled
+    set eth eth1  remote-eth-port eth1
+    set eth eth1  auto-neg enabled pcp-write-profile-id none pfc-mode disable
+    set eth eth1   alarm-suppression disable
+    set eth eth1  mirroring-source none
+    set eth eth1  mirroring-mode disabled
+    set eth eth2  admin up
+    set eth eth2  eth-type 1000fd
+    set eth eth2  alarm-propagation disabled
+    set eth eth2  remote-eth-port eth2
+    set eth eth2  auto-neg enabled pcp-write-profile-id none pfc-mode disable
+    set eth eth2   alarm-suppression disable
+    set eth eth2  mirroring-source none
+    set eth eth2  mirroring-mode disabled
+
+    # configuring lag
+
+
+    # configuring lag aware parameters of eth
+    set eth host  network-type customer-nni classifier-mode pcp-dscp
+    set eth eth0  network-type customer-nni classifier-mode pcp-dscp
+    set eth eth1  network-type customer-nni classifier-mode pcp-dscp
+    set eth eth2  network-type customer-nni classifier-mode pcp-dscp
+
+    # wred configuring
+
+    # bridge-common configuring
+    set bridge-common  def-cvlan-etype 0x8100  out-of-quota flood  mac-learning enable  control-packets-cos disable
+
+    # bridge configuring
+    set vlan s1 1 egress none untagged none
+    set vlan s1 undef egress none untagged none
+    set bridge s1 vlan-ethertype 0x88a8
+
+    # vlan configuring
+    set vlan s1 1  egress host,eth2 untagged host,eth2 history disable
+    set vlan s1 undef  egress none untagged none history disable
+
+    # ip configuring
+    set ip 1 ip-addr static 10.0.0.35 prefix-len 28 vlan 0
+
+    # ipv6 configuring
+
+    # route configuring
+    set route 1 dest 0.0.0.0 prefix-len 0 next-hop 10.0.0.33
+
+    # route6 configuring
+
+    # system configuring
+    set system contact contact name EH1200FX:SiteA-SiteB
+    set system location SiteA cli-timeout 15 loop-permission enabled
+    set system bridge-mode out-of-band eth2
+    set system queue-early-discard disable
+
+    # bridge-port configuring
+    set bridge-port s1 eth0 pvid 1000
+    set bridge-port s1 eth1 pvid 1000
+
+    # fdb-quota configuring
+
+    # fdb-evc-quota configuring
+
+    # fdb-table configuring
+
+    # arp configuring
+
+    # snmp-agent configuring
+    set snmp-agent read-com public write-com private snmp-version v2c
+
+    # snmp-mng configuring
+
+    # encryption configuring
+    set encryption  encryption disabled
+    set encryption  static-key 00AE0093875
+
+    # ntp configuring
+    set ntp 1  server 1.2.3.4
+    set ntp 1  secondary-server 1.2.3.5
+    set ntp 1  tmz -8
+
+    # aaa-server configuring
+
+    # cvlan-reg configuring
+
+    # pep-vp configuring
+
+    # svid-xlat configuring
+
+    # cfm-md configuring
+
+    # cfm-ma configuring
+
+    # cfm-ma-comp configuring
+
+    # cfm-mep configuring
+
+    # cfm-peer-mep-create configuring
+
+    # scheduler configuring
+    set scheduler mode strict-priority
+
+    # classifier-evc configuring
+
+    # classifier-cos configuring
+    set classifier-cos 1 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 0 ip-cos dont-care packet-type all cos 0
+    set classifier-cos 2 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 1 ip-cos dont-care packet-type all cos 1
+    set classifier-cos 3 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 2 ip-cos dont-care packet-type all cos 2
+    set classifier-cos 4 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 3 ip-cos dont-care packet-type all cos 3
+    set classifier-cos 5 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 4 ip-cos dont-care packet-type all cos 4
+    set classifier-cos 6 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 5 ip-cos dont-care packet-type all cos 5
+    set classifier-cos 7 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 6 ip-cos dont-care packet-type all cos 6
+    set classifier-cos 8 interface host,eth0,eth1,eth2 precedence 1 vid 0-4094 pcp 7 ip-cos dont-care packet-type all cos 7
+
+    # meter configuring
+
+    # ingress-qos configuring
+    set ingress-qos 0 0 meter 0 marking enable
+    set ingress-qos 0 1 meter 0 marking enable
+    set ingress-qos 0 2 meter 0 marking enable
+    set ingress-qos 0 3 meter 0 marking enable
+    set ingress-qos 0 4 meter 0 marking enable
+    set ingress-qos 0 5 meter 0 marking enable
+    set ingress-qos 0 6 meter 0 marking enable
+    set ingress-qos 0 7 meter 0 marking enable
+
+    # egress-qos configuring
+
+    # configuring   lldp
+    set lldp eth0  admin rx-tx vid none ip-index highest
+    set lldp eth1  admin disabled vid none ip-index lowest
+    set lldp eth2  admin disabled vid none ip-index lowest
+
+    # ring configuring
+
+    # configuring   link-oam
+    set link-oam eth0  admin disabled
+    set link-oam eth1  admin disabled
+    set link-oam eth2  admin disabled
+
+    # configuring   link-oam-loopback
+    set link-oam-loopback eth0  peer-request ignore
+    set link-oam-loopback eth1  peer-request ignore
+    set link-oam-loopback eth2  peer-request ignore
+
+    #  configuring extend-mm
+    set extend-mm  admin disable  role master  backup-port eth2  vid 1
+
+    # configuring   event-cfg
+    set event-cfg temperature-high trap-mask no alarm-mask no threshold-high 80 threshold-low -40 hysteresis 1
+
+    # arq-common configuring
+    set arq-common  admin up
+
+    # configuring   arq
+    set arq 0 rtx-limit 5
+    set arq 1 rtx-limit 5
+    set arq 2 rtx-limit 5
+    set arq 3 rtx-limit 5
+    set arq 4 rtx-limit 5
+    set arq 5 rtx-limit 5
+    set arq 6 rtx-limit 5
+    set arq 7 rtx-limit 5
+
+    # access-list configuring
+    set access-list 1 ip-addr 0.0.0.0 prefix-len 0
+
+    # acm-oam configuring
+
+    # aaa configuring
+    set aaa mode local shared-secret none connection-timeout 5 user-default-level user
+
+    # configuring   pse
+    set pse eth2 admin disable
+
+    # configuring ping-watchdog
+    set ping-watchdog  admin disable  destination 0.0.0.0  interval 1  retries 10
+
+</text>
+</reply>

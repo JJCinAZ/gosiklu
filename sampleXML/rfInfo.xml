@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reply>
+    <request>mo-info rf</request>
+    <mo type="rf" details="info" name="rf">
+        <attr name="reset-rf" value="0"/>
+        <attr name="operational" value="up"/>
+        <attr name="tx-state" value="normal"/>
+        <attr name="rx-state" value="normal"/>
+        <attr name="cinr" value="24"/>
+        <attr name="rssi" value="-35"/>
+        <attr name="channel-width" value="500"/>
+        <attr name="tx-frequency" value="74375"/>
+        <attr name="frequency" value="74375"/>
+        <attr name="rx-frequency" value="84375"/>
+        <attr name="role" value="auto"/>
+        <attr name="role-status" value="master"/>
+        <attr name="tx-mute" value="disable"/>
+        <attr name="tx-mute-timeout" value="60"/>
+        <attr name="mode" value="adaptive qam64"/>
+        <attr name="alignment-status" value="inactive"/>
+        <attr name="alignment-max-rssi" value="n/a"/>
+        <attr name="reset-alignment-max-rssi" value="0"/>
+        <attr name="lowest-modulation" value="qpsk1"/>
+        <attr name="spectrum-on" value="off"/>
+        <attr name="tx-asymmetry" value="100tx-100rx"/>
+        <attr name="rx-link-id" value="0"/>
+        <attr name="tx-link-id" value="0"/>
+        <attr name="rf-ber-test" value="disable"/>
+        <attr name="loopback-timeout" value="60"/>
+        <attr name="loopback" value="disabled"/>
+        <attr name="tx-power" value="7"/>
+        <attr name="long-range-mode" value="normal"/>
+        <attr name="atpc" value="enable"/>
+        <attr name="atpc-min-tx-power" value="-35"/>
+        <attr name="atpc-target-rssi" value="-35"/>
+        <attr name="atpc-min-cinr" value="-128"/>
+        <attr name="air-capacity" value="1000"/>
+        <stats-header>time, in-octets, in-idle-octets, in-good-octets, in-errored-octets, out-octets, out-idle-octets, in-pkts, in-good-pkts, in-errored-pkts, in-lost-pkts, out-pkts, min-cinr, max-cinr, min-rssi, max-rssi, min-modulation, max-modulation, arq-in-loss, arq-out-loss, elapsed-time</stats-header><stats-current>2024.09.23 08:45:00, 104890112003252, 104410425404648, 440516613239, 32690, 104890049764284, 104343265755074, 3253982002, 3253981958, 44, 53, 3304383204, -128, 29, -128, -31, qpsk1, qam64, 0, 2, 0010:01:52:16</stats-current></mo>
+
+</reply>

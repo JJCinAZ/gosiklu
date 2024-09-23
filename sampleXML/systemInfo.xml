@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reply>
+    <request>mo-info system ; ip ; license ; event-cfg ; sw ; inventory ; eth ; script ; rollback ; bridge-common ; egress-qos ; ping-watchdog; pse;</request>
+    <mo type="system" details="info" name="system">
+        <attr name="hard-reset" value="6144"/>
+        <attr name="description" value="EH-1200FX"/>
+        <attr name="snmpid" value=".1.3.6.1.4.1.31926"/>
+        <attr name="uptime" value="0010:01:50:44"/>
+        <attr name="contact" value="contact"/>
+        <attr name="name" value="EH1200FX:SiteA-SiteB"/>
+        <attr name="location" value="SiteA"/>
+        <attr name="voltage" value="57 poe"/>
+        <attr name="temperature" value="38"/>
+        <attr name="date" value="2024.09.23"/>
+        <attr name="time" value="08:51:02"/>
+        <attr name="cli-timeout" value="15"/>
+        <attr name="time-cc" value="0"/>
+        <attr name="date-cc" value="0"/>
+        <attr name="loop-permission" value="enabled"/>
+        <attr name="system-oid" value="SNMP-ONLY"/>
+        <attr name="time-cc" value="0"/>
+        <attr name="bridge-mode" value="out-of-band eth2"/>
+        <attr name="config-saved" value="false"/>
+        <attr name="queue-early-discard" value="disable"/>
+    </mo>
+    <mo type="ip" details="info" name="ip 1">
+        <attr name="ip-index" value="1"/>
+        <attr name="ip-addr" value="static 10.0.0.35"/>
+        <attr name="prefix-len" value="28"/>
+        <attr name="vlan" value="0"/>
+        <attr name="default-gateway" value="10.0.0.1"/>
+        <attr name="row-pointer" value="SNMP-ONLY"/>
+        <attr name="ifIndex" value="1"/>
+    </mo>
+    <mo type="license" details="info" name="license oam">
+        <attr name="status" value="disable"/>
+        <attr name="permission" value="disable"/>
+        <attr name="config" value="disable"/>
+        <attr name="temporary" value="disable"/>
+        <attr name="temporary-time" value="30d 0h 0m"/>
+    </mo>
+    <mo type="license" details="info" name="license encryption">
+        <attr name="status" value="disable"/>
+        <attr name="permission" value="disable"/>
+        <attr name="config" value="disable"/>
+        <attr name="temporary" value="disable"/>
+        <attr name="temporary-time" value="30d 0h 0m"/>
+    </mo>
+    <mo type="license" details="info" name="license data-rate">
+        <attr name="status" value="1000"/>
+        <attr name="permission" value="1000"/>
+        <attr name="config" value="1000"/>
+        <attr name="temporary" value="disable"/>
+        <attr name="temporary-time" value="30d 0h 0m"/>
+    </mo>
+    <mo type="license" details="info" name="license resiliency">
+        <attr name="status" value="disable"/>
+        <attr name="permission" value="disable"/>
+        <attr name="config" value="disable"/>
+        <attr name="temporary" value="disable"/>
+        <attr name="temporary-time" value="30d 0h 0m"/>
+    </mo>
+    <mo type="license" details="info" name="license extend-mm">
+        <attr name="status" value="disable"/>
+        <attr name="permission" value="disable"/>
+        <attr name="config" value="disable"/>
+        <attr name="temporary" value="disable"/>
+        <attr name="temporary-time" value="30d 0h 0m"/>
+    </mo>
+    <mo type="license" details="info" name="license pse">
+        <attr name="status" value="disable"/>
+        <attr name="permission" value="disable"/>
+        <attr name="config" value="disable"/>
+        <attr name="temporary" value="disable"/>
+        <attr name="temporary-time" value="30d 0h 0m"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg temperature-high">
+        <attr name="event-cfg-id" value="temperature-high"/>
+        <attr name="event-cfg-name" value="temperature-high"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="no"/>
+        <attr name="threshold-type" value="4"/>
+        <attr name="threshold-high" value="80"/>
+        <attr name="threshold-low" value="-40"/>
+        <attr name="threshold" value="below -40[+1] or above 80[-1]"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg cfm-fault-alarm">
+        <attr name="event-cfg-id" value="cfm-fault-alarm"/>
+        <attr name="event-cfg-name" value="cfm-fault-alarm"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="no"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg loopback-enabled">
+        <attr name="event-cfg-id" value="loopback-enabled"/>
+        <attr name="event-cfg-name" value="loopback-enabled"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="no"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg tx-mute-enabled">
+        <attr name="event-cfg-id" value="tx-mute-enabled"/>
+        <attr name="event-cfg-name" value="tx-mute-enabled"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="no"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg ql-eec1-or-worse">
+        <attr name="event-cfg-id" value="ql-eec1-or-worse"/>
+        <attr name="event-cfg-name" value="ql-eec1-or-worse"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="no"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg cold-start">
+        <attr name="event-cfg-id" value="cold-start"/>
+        <attr name="event-cfg-name" value="cold-start"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg modulation-change">
+        <attr name="event-cfg-id" value="modulation-change"/>
+        <attr name="event-cfg-name" value="modulation-change"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg sfp-in">
+        <attr name="event-cfg-id" value="sfp-in"/>
+        <attr name="event-cfg-name" value="sfp-in"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg ref-clock-switch">
+        <attr name="event-cfg-id" value="ref-clock-switch"/>
+        <attr name="event-cfg-name" value="ref-clock-switch"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg cinr-out-of-range">
+        <attr name="event-cfg-id" value="cinr-out-of-range"/>
+        <attr name="event-cfg-name" value="cinr-out-of-range"/>
+        <attr name="trap-mask" value="yes"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="2"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="below unspecified value"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="0"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg rssi-out-of-range">
+        <attr name="event-cfg-id" value="rssi-out-of-range"/>
+        <attr name="event-cfg-name" value="rssi-out-of-range"/>
+        <attr name="trap-mask" value="yes"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="2"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="below unspecified value"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="0"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg lowest-modulation">
+        <attr name="event-cfg-id" value="lowest-modulation"/>
+        <attr name="event-cfg-name" value="lowest-modulation"/>
+        <attr name="trap-mask" value="yes"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg pse-voltage">
+        <attr name="event-cfg-id" value="pse-voltage"/>
+        <attr name="event-cfg-name" value="pse-voltage"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="no"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="event-cfg" details="info" name="event-cfg rate-change">
+        <attr name="event-cfg-id" value="rate-change"/>
+        <attr name="event-cfg-name" value="rate-change"/>
+        <attr name="trap-mask" value="no"/>
+        <attr name="alarm-mask" value="yes"/>
+        <attr name="threshold-type" value="0"/>
+        <attr name="threshold-high" value="0"/>
+        <attr name="threshold-low" value="0"/>
+        <attr name="threshold" value="n/a"/>
+        <attr name="hysteresis" value="1"/>
+        <attr name="threshold-valid" value="1"/>
+        <attr name="mask" value="no"/>
+    </mo>
+    <mo type="sw" details="info" name="sw 0">
+        <attr name="version" value="7.7.10-13186-d2f25a6"/>
+        <attr name="running" value="yes"/>
+        <attr name="scheduled-time" value=""/>
+    </mo>
+    <mo type="sw" details="info" name="sw 1">
+        <attr name="version" value="7.7.4.27201 2020-09-16 10:11:49"/>
+        <attr name="running" value="no"/>
+        <attr name="scheduled-time" value=""/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 1">
+        <attr name="ph-idx" value="1"/>
+        <attr name="desc" value="EH-1200FX"/>
+        <attr name="cont-in" value="0"/>
+        <attr name="class" value="chassis"/>
+        <attr name="rel-pos" value="-1"/>
+        <attr name="name" value="Chassis"/>
+        <attr name="hw-rev" value="D0"/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value="7.7.10-13186-d2f25a6"/>
+        <attr name="serial" value="F950000000"/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value="EH-1200FX-ODU-L-EXT"/>
+        <attr name="fru" value="true"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 2">
+        <attr name="ph-idx" value="2"/>
+        <attr name="desc" value="BB Board"/>
+        <attr name="cont-in" value="1"/>
+        <attr name="class" value="container"/>
+        <attr name="rel-pos" value="0"/>
+        <attr name="name" value="Base Band"/>
+        <attr name="hw-rev" value="3.2"/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value="F950000001"/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 3">
+        <attr name="ph-idx" value="3"/>
+        <attr name="desc" value="RF Board 71-76Ghz Tx FDD"/>
+        <attr name="cont-in" value="1"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="1"/>
+        <attr name="name" value="RF Board 1"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value="C950000748"/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value="FARF034"/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 4">
+        <attr name="ph-idx" value="4"/>
+        <attr name="desc" value="RF Board 81-86Ghz Rx FDD"/>
+        <attr name="cont-in" value="1"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="2"/>
+        <attr name="name" value="RF Board 2"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value="C95008473"/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value="FARF031A"/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 5">
+        <attr name="ph-idx" value="5"/>
+        <attr name="desc" value="External Antenna"/>
+        <attr name="cont-in" value="1"/>
+        <attr name="class" value="other"/>
+        <attr name="rel-pos" value="3"/>
+        <attr name="name" value="Antenna"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 6">
+        <attr name="ph-idx" value="6"/>
+        <attr name="desc" value="Modem Chip"/>
+        <attr name="cont-in" value="2"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="0"/>
+        <attr name="name" value="Modem"/>
+        <attr name="hw-rev" value="060"/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 7">
+        <attr name="ph-idx" value="7"/>
+        <attr name="desc" value="FPGA code"/>
+        <attr name="cont-in" value="2"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="1"/>
+        <attr name="name" value="FPGA"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value="0"/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 8">
+        <attr name="ph-idx" value="8"/>
+        <attr name="desc" value="CPLD code"/>
+        <attr name="cont-in" value="2"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="2"/>
+        <attr name="name" value="CPLD"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value="0.1"/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 9">
+        <attr name="ph-idx" value="9"/>
+        <attr name="desc" value="RJ45"/>
+        <attr name="cont-in" value="2"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="3"/>
+        <attr name="name" value="eth1"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value=""/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 10">
+        <attr name="ph-idx" value="10"/>
+        <attr name="desc" value="RJ45"/>
+        <attr name="cont-in" value="2"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="4"/>
+        <attr name="name" value="eth2"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value=""/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value=""/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="inventory" details="info" name="inventory 13">
+        <attr name="ph-idx" value="13"/>
+        <attr name="desc" value="U-boot code"/>
+        <attr name="cont-in" value="2"/>
+        <attr name="class" value="module"/>
+        <attr name="rel-pos" value="7"/>
+        <attr name="name" value="Boot"/>
+        <attr name="hw-rev" value=""/>
+        <attr name="fw-rev" value=""/>
+        <attr name="sw-rev" value="5.0.0.22815.Jan 30 2018"/>
+        <attr name="serial" value=""/>
+        <attr name="mfg-name" value="Siklu"/>
+        <attr name="model-name" value=""/>
+        <attr name="fru" value="false"/>
+    </mo>
+    <mo type="eth" details="info" name="eth host">
+        <attr name="eth" value="host"/>
+        <attr name="description" value="Host"/>
+        <attr name="mtu" value="16384"/>
+        <attr name="mac-addr" value="00:24:a4:14:d6:19"/>
+        <attr name="admin" value="up"/>
+        <attr name="operational" value="up"/>
+        <attr name="last-change" value="0010:01:49:47"/>
+        <attr name="name" value="Host"/>
+        <attr name="promisc-mode" value="SNMP-ONLY"/>
+        <attr name="connector" value="SNMP-ONLY"/>
+        <attr name="ifType" value="SNMP-ONLY"/>
+        <attr name="ifIndex" value="1"/>
+        <attr name="alias" value=""/>
+        <attr name="eth-type" value="unknown"/>
+        <attr name="eth-act-type" value="1000fd"/>
+        <attr name="capabilities" value="SNMP-ONLY"/>
+        <attr name="auto-neg" value="enabled"/>
+        <attr name="loopback-mode" value="disabled"/>
+        <attr name="loopback-timeout" value="60"/>
+        <attr name="mirroring-source" value="none"/>
+        <attr name="mirroring-mode" value="disabled"/>
+        <attr name="alarm-propagation" value="disabled"/>
+        <attr name="remote-eth-port" value="host"/>
+        <attr name="clock" value="auto"/>
+        <attr name="connector-type" value="none"/>
+        <attr name="network-type" value="customer-nni"/>
+        <attr name="pcp-write-profile-id" value="none"/>
+        <attr name="classifier-mode" value="pcp-dscp"/>
+        <attr name="pfc-mode" value="disable"/>
+        <attr name="alarm-suppression" value="disable"/>
+        <attr name="lag-member" value=""/>
+        <attr name="tx-throughput" value="1214450"/>
+        <attr name="rx-throughput" value="66546"/>
+        <stats-header>time, in-octets, in-ucast-pkts, in-discards, in-errors, out-octets, out-ucast-pkts, out-errors, in-mcast-pkts, in-bcast-pkts, out-mcast-pkts, out-bcast-pkts, out-discards, in-no-rule-discards, in-rate, out-rate, util</stats-header><stats-current>2024.09.23 08:45:00, 112127081, 425365, 0, 0, 53921534, 258361, 0, 0, 0, 0, 0, 0, 0, 7110, 38416, 0, 0</stats-current></mo>
+    <mo type="eth" details="info" name="eth eth0">
+        <attr name="eth" value="eth0"/>
+        <attr name="description" value="Eth 0"/>
+        <attr name="mtu" value="16384"/>
+        <attr name="mac-addr" value="00:24:a4:14:d6:1a"/>
+        <attr name="admin" value="up"/>
+        <attr name="operational" value="up"/>
+        <attr name="last-change" value="0010:01:49:47"/>
+        <attr name="name" value="Eth0"/>
+        <attr name="promisc-mode" value="SNMP-ONLY"/>
+        <attr name="connector" value="SNMP-ONLY"/>
+        <attr name="ifType" value="SNMP-ONLY"/>
+        <attr name="ifIndex" value="2"/>
+        <attr name="alias" value=""/>
+        <attr name="eth-type" value="unknown"/>
+        <attr name="eth-act-type" value="1000fd"/>
+        <attr name="capabilities" value="SNMP-ONLY"/>
+        <attr name="auto-neg" value="enabled"/>
+        <attr name="loopback-mode" value="disabled"/>
+        <attr name="loopback-timeout" value="60"/>
+        <attr name="mirroring-source" value="none"/>
+        <attr name="mirroring-mode" value="disabled"/>
+        <attr name="alarm-propagation" value="disabled"/>
+        <attr name="remote-eth-port" value="host"/>
+        <attr name="clock" value="auto"/>
+        <attr name="connector-type" value="none"/>
+        <attr name="network-type" value="customer-nni"/>
+        <attr name="pcp-write-profile-id" value="none"/>
+        <attr name="classifier-mode" value="pcp-dscp"/>
+        <attr name="pfc-mode" value="disable"/>
+        <attr name="alarm-suppression" value="disable"/>
+        <attr name="lag-member" value=""/>
+        <attr name="tx-throughput" value="94563050"/>
+        <attr name="rx-throughput" value="4474435"/>
+        <stats-header>time, in-octets, in-ucast-pkts, in-discards, in-errors, out-octets, out-ucast-pkts, out-errors, in-mcast-pkts, in-bcast-pkts, out-mcast-pkts, out-bcast-pkts, out-discards, in-no-rule-discards, in-rate, out-rate, util</stats-header><stats-current>2024.09.23 08:45:00, 453711043496, 3253289677, 0, 0, 534312548617, 339509313, 0, 0, 0, 2970336566, 0, 0, 0, 3430416, 36692696, 4, 0</stats-current></mo>
+    <mo type="eth" details="info" name="eth eth1">
+        <attr name="eth" value="eth1"/>
+        <attr name="description" value="Eth 1"/>
+        <attr name="mtu" value="16384"/>
+        <attr name="mac-addr" value="00:24:a4:00:01:02"/>
+        <attr name="admin" value="up"/>
+        <attr name="operational" value="up"/>
+        <attr name="last-change" value="0010:01:49:47"/>
+        <attr name="name" value="Eth1"/>
+        <attr name="promisc-mode" value="SNMP-ONLY"/>
+        <attr name="connector" value="SNMP-ONLY"/>
+        <attr name="ifType" value="SNMP-ONLY"/>
+        <attr name="ifIndex" value="3"/>
+        <attr name="alias" value=""/>
+        <attr name="eth-type" value="1000fd"/>
+        <attr name="eth-act-type" value="1000fd"/>
+        <attr name="capabilities" value="SNMP-ONLY"/>
+        <attr name="auto-neg" value="enabled"/>
+        <attr name="loopback-mode" value="disabled"/>
+        <attr name="loopback-timeout" value="60"/>
+        <attr name="mirroring-source" value="none"/>
+        <attr name="mirroring-mode" value="disabled"/>
+        <attr name="alarm-propagation" value="disabled"/>
+        <attr name="remote-eth-port" value="eth1"/>
+        <attr name="clock" value="auto"/>
+        <attr name="connector-type" value="rj45"/>
+        <attr name="network-type" value="customer-nni"/>
+        <attr name="pcp-write-profile-id" value="none"/>
+        <attr name="classifier-mode" value="pcp-dscp"/>
+        <attr name="pfc-mode" value="disable"/>
+        <attr name="alarm-suppression" value="disable"/>
+        <attr name="lag-member" value=""/>
+        <attr name="tx-throughput" value="2227984"/>
+        <attr name="rx-throughput" value="91750551"/>
+        <stats-header>time, in-octets, in-ucast-pkts, in-discards, in-errors, out-octets, out-ucast-pkts, out-errors, in-mcast-pkts, in-bcast-pkts, out-mcast-pkts, out-bcast-pkts, out-discards, in-no-rule-discards, in-rate, out-rate, util</stats-header><stats-current>2024.09.23 08:45:00, 283175978019, 339042225, 0, 0, 216796048033, 288697850, 0, 439112, 14510, 340007, 14414, 0, 871, 34202197, 1210862, 3, 0</stats-current></mo>
+    <mo type="eth" details="info" name="eth eth2">
+        <attr name="eth" value="eth2"/>
+        <attr name="description" value="Eth 2"/>
+        <attr name="mtu" value="16384"/>
+        <attr name="mac-addr" value="00:24:a4:00:01:03"/>
+        <attr name="admin" value="up"/>
+        <attr name="operational" value="up"/>
+        <attr name="last-change" value="0010:01:49:47"/>
+        <attr name="name" value="Eth2"/>
+        <attr name="promisc-mode" value="SNMP-ONLY"/>
+        <attr name="connector" value="SNMP-ONLY"/>
+        <attr name="ifType" value="SNMP-ONLY"/>
+        <attr name="ifIndex" value="4"/>
+        <attr name="alias" value=""/>
+        <attr name="eth-type" value="1000fd"/>
+        <attr name="eth-act-type" value="1000fd"/>
+        <attr name="capabilities" value="SNMP-ONLY"/>
+        <attr name="auto-neg" value="enabled"/>
+        <attr name="loopback-mode" value="disabled"/>
+        <attr name="loopback-timeout" value="60"/>
+        <attr name="mirroring-source" value="none"/>
+        <attr name="mirroring-mode" value="disabled"/>
+        <attr name="alarm-propagation" value="disabled"/>
+        <attr name="remote-eth-port" value="eth2"/>
+        <attr name="clock" value="auto"/>
+        <attr name="connector-type" value="rj45"/>
+        <attr name="network-type" value="customer-nni"/>
+        <attr name="pcp-write-profile-id" value="none"/>
+        <attr name="classifier-mode" value="pcp-dscp"/>
+        <attr name="pfc-mode" value="disable"/>
+        <attr name="alarm-suppression" value="disable"/>
+        <attr name="lag-member" value=""/>
+        <attr name="tx-throughput" value="1218737"/>
+        <attr name="rx-throughput" value="75236"/>
+        <stats-header>time, in-octets, in-ucast-pkts, in-discards, in-errors, out-octets, out-ucast-pkts, out-errors, in-mcast-pkts, in-bcast-pkts, out-mcast-pkts, out-bcast-pkts, out-discards, in-no-rule-discards, in-rate, out-rate, util</stats-header><stats-current>2024.09.23 08:45:00, 127524364, 149003, 0, 0, 55579432, 258349, 0, 58038, 276465, 6, 1, 0, 29114, 7916, 38653, 0, 0</stats-current></mo>
+    <mo type="script" details="info" name="script 0">
+        <attr name="name" value="restore_networking_config"/>
+    </mo>
+    <mo type="script" details="info" name="script 1">
+        <attr name="name" value="bridge_mode_customer-nni"/>
+    </mo>
+    <mo type="script" details="info" name="script 2">
+        <attr name="name" value="bridge_mode_customer-uni"/>
+    </mo>
+    <mo type="script" details="info" name="script 3">
+        <attr name="name" value="clear_statistics"/>
+    </mo>
+    <mo type="script" details="info" name="script 4">
+        <attr name="name" value="restore_qos_config"/>
+    </mo>
+    <mo type="script" details="info" name="script 5">
+        <attr name="name" value="system_info"/>
+    </mo>
+    <mo type="rollback" details="info" name="rollback">
+        <attr name="timeout" value="not started"/>
+    </mo>
+    <mo type="bridge-common" details="info" name="bridge-common">
+        <attr name="def-cvlan-etype" value="0x8100"/>
+        <attr name="out-of-quota" value="flood"/>
+        <attr name="mac-learning" value="enable"/>
+        <attr name="control-packets-cos" value="disable"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 0">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="0"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 1">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="1"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 2">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="2"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 3">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="3"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 4">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="4"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 5">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="5"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 6">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="6"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos host 7">
+        <attr name="eth" value="host"/>
+        <attr name="cos-id" value="7"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 0">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="0"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 1">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="1"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 2">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="2"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 3">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="3"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 4">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="4"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 5">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="5"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 6">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="6"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth0 7">
+        <attr name="eth" value="eth0"/>
+        <attr name="cos-id" value="7"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 0">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="0"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 1">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="1"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 2">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="2"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 3">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="3"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 4">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="4"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 5">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="5"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 6">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="6"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth1 7">
+        <attr name="eth" value="eth1"/>
+        <attr name="cos-id" value="7"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 0">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="0"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 1">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="1"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 2">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="2"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 3">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="3"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 4">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="4"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 5">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="5"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 6">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="6"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="egress-qos" details="info" name="egress-qos eth2 7">
+        <attr name="eth" value="eth2"/>
+        <attr name="cos-id" value="7"/>
+        <attr name="weight" value="1"/>
+        <attr name="cir" value="0"/>
+        <attr name="mode" value="strict-priority"/>
+        <attr name="color-drop" value="blind"/>
+        <attr name="drop-mode" value="simple 10000"/>
+        <attr name="pfc" value="none"/>
+    </mo>
+    <mo type="ping-watchdog" details="info" name="ping-watchdog">
+        <attr name="admin" value="disable"/>
+        <attr name="destination" value="0.0.0.0"/>
+        <attr name="interval" value="1"/>
+        <attr name="retries" value="10"/>
+    </mo>
+    <mo type="pse" details="info" name="pse eth2">
+        <attr name="port" value="eth2"/>
+        <attr name="reset-pse" value="0"/>
+        <attr name="admin" value="disable"/>
+        <attr name="status" value="Off"/>
+        <attr name="v-out" value="0.0 V"/>
+        <attr name="i-out" value="0.0 A"/>
+        <attr name="power-out" value="26-watt"/>
+    </mo>
+    <mo>Invalid mo type </mo>
+    <mo type="system" details="info" name="system">
+        <attr name="hard-reset" value="6144"/>
+        <attr name="description" value="EH-1200FX"/>
+        <attr name="snmpid" value=".1.3.6.1.4.1.31926"/>
+        <attr name="uptime" value="0010:01:50:44"/>
+        <attr name="contact" value="contact"/>
+        <attr name="name" value="EH1200FX:SiteA-SiteB"/>
+        <attr name="location" value="SiteA"/>
+        <attr name="voltage" value="57 poe"/>
+        <attr name="temperature" value="38"/>
+        <attr name="date" value="2024.09.23"/>
+        <attr name="time" value="08:51:02"/>
+        <attr name="cli-timeout" value="15"/>
+        <attr name="time-cc" value="0"/>
+        <attr name="date-cc" value="0"/>
+        <attr name="loop-permission" value="enabled"/>
+        <attr name="system-oid" value="SNMP-ONLY"/>
+        <attr name="time-cc" value="0"/>
+        <attr name="bridge-mode" value="out-of-band eth2"/>
+        <attr name="config-saved" value="false"/>
+        <attr name="queue-early-discard" value="disable"/>
+    </mo>
+
+</reply>

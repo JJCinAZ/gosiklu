@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reply>
+    <request>show-user-activity-log</request>
+    <end-code>ok</end-code><text>May 12 18:34:58 sw rfd: DVM inserted, starting alignment mode.
+    May 12 23:46:19 sw cad: User: admin : copy running-configuration startup-configuration
+    May 12 23:47:33 sw cad: User: admin : set system name EH1200FX:SiteA-SiteB
+    May 12 23:48:27 sw cad: User: admin : set system contact contact
+    May 12 23:48:27 sw cad: User: admin : set system location SiteA
+    May 12 23:50:12 sw cad: User: admin : set ip 1 ip-addr static  10.0.0.146 prefix-len 28 vlan 0
+    May 12 23:50:12 sw cad: User: admin : set route 1 dest 0.0.0.0 prefix-len 0 next-hop 10.0.0.0
+    May 12 23:50:13 sw cad: User: admin : set ntp 1 server 1.2.3.4
+    May 12 23:50:13 sw cad: User: admin : set ntp 1 secondary-server 1.2.3.5
+    May 12 23:50:13 sw cad: User: admin : set ntp 1 tmz -7
+    May 12 16:50:37 sw cad: User: admin : clear access-list 2
+    May 12 16:50:37 sw cad: User: admin : set snmp-agent read-com public
+    May 12 16:50:37 sw cad: User: admin : set snmp-agent write-com private
+    May 12 16:51:06 sw cad: User: admin : set user admin type admin passw ***
+    May 12 16:51:50 sw cad: User: admin : copy running-configuration startup-configuration
+    May 12 16:54:48 sw cad: User: admin : set system bridge-mode out-of-band eth2
+    May 13 10:36:47 sw cad: User: admin : set system bridge-mode out-of-band eth2
+    May 13 10:37:27 sw cad: User: admin : copy running-configuration startup-configuration
+    May 13 10:39:56 sw cad: User: admin : set system bridge-mode out-of-band eth1
+    May 13 10:40:51 sw cad: User: admin : copy running-configuration startup-configuration
+    Jan  5 15:34:19 sw cad: User: admin : copy sw http://siklu-uimage-cvmx-enc-7_7_4-27201
+    Jan  5 15:35:07 sw cad: User: admin : run sw immediate  no-timeout
+    Feb  9 13:24:09 sw cad: User: admin : set system queue-early-discard disable
+    Feb  9 13:24:26 sw cad: User: admin : copy running-configuration startup-configuration
+    Feb 18 17:27:07 sw cad: User: admin : set system queue-early-discard disable
+    Feb 18 17:27:09 sw cad: User: admin : copy running-configuration startup-configuration
+    Mar  8 10:13:18 sw rfd: DVM inserted, starting alignment mode.
+    Mar  8 10:48:04 sw cad: User: admin : copy sw http://siklu-uimage-7_7_10-13186
+    Mar  8 10:48:45 sw cad: User: admin : run sw immediate  no-timeout
+    2023 Mar  8 16:32:16 cad: User: admin : set bridge c4
+    2023 Mar  8 16:32:16 cad: User: admin : set vlan c4 1 egress s1,eth2 untagged s1,eth2
+    2023 Mar  8 16:32:17 cad: User: admin : set vlan c4 undef egress s1,eth2 untagged none
+    2023 Mar  8 16:32:17 cad: User: admin : set vlan s1 1000 egress eth0,eth1 untagged eth0,eth1
+    2023 Mar  8 16:32:51 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:32:59 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:34:20 cad: User: admin : set eth eth2 network-type customer-nni
+    2023 Mar  8 16:34:20 cad: User: admin : set vlan s1 1 egress host,eth1,eth2 untagged host,eth1,eth2
+    2023 Mar  8 16:34:21 cad: User: admin : set vlan s1 undef egress eth2 untagged none
+    2023 Mar  8 16:34:22 cad: User: admin : set vlan s1 1000 egress eth0,eth1 untagged eth0,eth1
+    2023 Mar  8 16:34:22 cad: User: admin : set eth eth1 network-type customer-uni
+    2023 Mar  8 16:38:21 cad: User: admin : set vlan s1 1000 egress eth0,eth1,c4 untagged eth0,eth1,c4
+    2023 Mar  8 16:39:52 cad: User: admin : set eth eth2 network-type customer-nni
+    2023 Mar  8 16:39:53 cad: User: admin : set vlan s1 1000 egress eth0,eth1,eth2 untagged eth0,eth1,eth2
+    2023 Mar  8 16:41:35 cad: User: admin : set system bridge-mode out-of-band eth2
+    2023 Mar  8 16:43:49 cad: User: admin : set bridge c3
+    2023 Mar  8 16:43:49 cad: User: admin : set vlan c3 1 egress s1,eth1 untagged s1,eth1
+    2023 Mar  8 16:43:49 cad: User: admin : set bridge c4
+    2023 Mar  8 16:43:49 cad: User: admin : set vlan c4 1 egress s1,eth2 untagged s1,eth2
+    2023 Mar  8 16:43:50 cad: User: admin : set vlan c3 undef egress s1,eth1 untagged none
+    2023 Mar  8 16:43:50 cad: User: admin : set vlan c4 undef egress s1,eth2 untagged none
+    2023 Mar  8 16:43:50 cad: User: admin : set vlan s1 1000 egress eth0,c3 untagged eth0,c3
+    2023 Mar  8 16:44:21 cad: User: admin : set eth eth1 network-type provider-nni
+    2023 Mar  8 16:44:21 cad: User: admin : set eth eth2 network-type provider-nni
+    2023 Mar  8 16:44:21 cad: User: admin : set vlan s1 1 egress host,eth1,eth2 untagged host,eth1,eth2
+    2023 Mar  8 16:44:22 cad: User: admin : set vlan s1 undef egress eth1,eth2 untagged none
+    2023 Mar  8 16:44:22 cad: User: admin : set vlan s1 1000 egress eth0,eth1 untagged eth0,eth1
+    2023 Mar  8 16:44:22 cad: User: admin : set bridge-port s1 eth1 pvid 1000
+    2023 Mar  8 16:46:21 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:46:27 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:47:07 cad: User: admin : set vlan s1 1 egress host,eth2 untagged host,eth2
+    2023 Mar  8 16:47:08 cad: User: admin : set vlan s1 1000 egress eth0,eth1 untagged eth0,eth1
+    2023 Mar  8 16:47:22 cad: User: admin : set vlan s1 undef egress none untagged none
+    2023 Mar  8 16:47:23 cad: User: admin : set vlan s1 1000 egress eth0,eth1 untagged eth0,eth1
+    2023 Mar  8 16:47:56 cad: User: admin : set eth eth2 network-type customer-nni
+    2023 Mar  8 16:47:56 cad: User: admin : set eth eth1 network-type customer-nni
+    2023 Mar  8 16:47:56 cad: User: admin : set vlan s1 1 egress host,eth2 untagged host,eth2
+    2023 Mar  8 16:47:57 cad: User: admin : set vlan s1 1000 egress eth0,eth1 untagged eth0,eth1
+    2023 Mar  8 16:48:25 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:48:30 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:49:13 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  8 16:49:32 cad: User: admin : reset system
+    2023 Mar  8 16:58:56 cad: User: admin : set ip 1 ip-addr static  10.0.0.35 prefix-len 28 vlan 0
+    2023 Mar  8 16:58:56 cad: User: admin : set route 1 dest 0.0.0.0 prefix-len 0 next-hop 10.0.0.1
+    2023 Mar  8 16:59:44 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  9 11:09:10 rfd: DVM inserted, starting alignment mode.
+    2023 Mar  9 11:26:14 rfd: DVM inserted, starting alignment mode.
+    2023 Mar  9 11:32:18 rfd: DVM inserted, starting alignment mode.
+    2023 Mar  9 11:48:46 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  9 11:48:52 cad: User: admin : set rf atpc enable
+    2023 Mar  9 11:48:59 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  9 11:49:02 cad: User: admin : copy running-configuration startup-configuration
+    2023 Mar  9 11:49:51 cad: User: admin : set rf mode alignment
+    2023 Mar  9 11:54:22 cad: User: admin : reset system
+    2023 Mar  9 11:55:44 rfd: DVM inserted, starting alignment mode.
+    2024 Sep 13 07:00:08 cad: User: admin : reset system
+    2024 Sep 20 15:37:35 cad: User: admin : set ntp 1 server 1.2.3.4
+    2024 Sep 20 15:40:53 cad: User: admin : set ntp 1 tmz -8
+    2024 Sep 20 14:45:55 cad: User: admin : set ntp 1 secondary-server 1.2.3.4
+    2024 Sep 20 14:47:19 cad: User: admin : set ntp 1 secondary-server 1.2.3.5
+    2024 Sep 20 15:04:51 cad: User: admin : copy startup-configuration display
+    2024 Sep 20 15:14:34 cad: User: admin : set ntp 1 server 1.2.3.5
+    2024 Sep 20 15:14:59 cad: User: admin : set ntp 1 tmz -7
+    2024 Sep 20 16:15:38 cad: User: admin : set ntp 1 server 1.2.3.4 secondary-server 1.2.3.5 tmz -7
+    2024 Sep 20 16:17:46 cad: User: admin : copy running-configuration startup-configuration
+    2024 Sep 20 16:28:08 cad: User: admin : set ntp 1 server 1.2.3.5
+    2024 Sep 23 08:57:04 cad: User: admin : copy running-configuration display
+</text>
+</reply>
