@@ -1,6 +1,7 @@
 package gosiklu
 
 import (
+	"context"
 	"crypto/tls"
 	"encoding/xml"
 	"errors"
@@ -9,22 +10,8 @@ import (
 	"log"
 	"net/url"
 	"strings"
+	"time"
 )
-
-type SikluData struct {
-	Request string `xml:"request"`
-	Mo      []struct {
-		Type    string `xml:"type,attr"`
-		Details string `xml:"details,attr"`
-		Name    string `xml:"name,attr"`
-		Attr    []struct {
-			Name  string `xml:"name,attr"`
-			Value string `xml:"value,attr"`
-		} `xml:"attr"`
-		StatsHeader  string `xml:"stats-header"`
-		StatsCurrent string `xml:"stats-current"`
-	} `xml:"mo"`
-}
 
 type CommandReply struct {
 	Request string   `xml:"request"`
@@ -39,6 +26,7 @@ type Client struct {
 	logger      clientLogger
 	httpClient  *resty.Client
 	debugMode   bool
+	ctx         context.Context
 }
 
 func (c *Client) SetDebug(debug bool) *Client {
@@ -51,12 +39,13 @@ func (c *Client) SetDebug(debug bool) *Client {
 // If login or access to the radio are unsuccessful, nil is returned
 // If successful, a pointer to the Client is returned and the caller is responsible for calling Close() when done
 // The host parameter should be an IP address or hostname of the radio
-func New(host, user, pass string) (*Client, error) {
+func New(ctx context.Context, host, user, pass string) (*Client, error) {
 	c := &Client{
 		Host:        host,
 		User:        user,
 		encodedPass: passwordEncode(pass),
 		logger:      clientLogger{},
+		ctx:         ctx,
 	}
 	// Siklu web server only does an insecure cipher, so we have to force that here
 	// also need to skip verification of certificates and allow older TLS versions
@@ -79,7 +68,10 @@ func (c *Client) login() error {
 	// web server is sensitive to the order of the query parameters.  You cannot use SetQueryString() because it
 	// just parses the string with url.ParseQuery() which does not preserve the order of the query parameters.
 	// You have to supply the `caller_url=/` parameter else the Siklu web server will never return on the HTTP call
+	newContext, cancel := context.WithTimeout(c.ctx, time.Second*5)
+	defer cancel()
 	resp, err := c.httpClient.R().
+		SetContext(newContext).
 		SetBody(fmt.Sprintf(`user=%s&password=%s&caller_url=%%2F`, url.PathEscape(c.User), c.encodedPass)).
 		SetHeader("Content-Type", "application/x-www-form-urlencoded").
 		SetHeader("accept", "*/*").
@@ -101,7 +93,11 @@ func (c *Client) login() error {
 }
 
 func (c *Client) Close() {
-	resp, err := c.httpClient.R().SetHeader("accept", "*/*").Get(fmt.Sprintf("https://%s/main/logout", c.Host))
+	newContext, cancel := context.WithTimeout(c.ctx, time.Second*5)
+	defer cancel()
+	resp, err := c.httpClient.R().
+		SetContext(newContext).
+		SetHeader("accept", "*/*").Get(fmt.Sprintf("https://%s/main/logout", c.Host))
 	if err == nil && c.debugMode {
 		log.Printf(resp.Status())
 	}
@@ -118,7 +114,11 @@ func (c *Client) GetInfo(sections []string) (SikluData, error) {
 	// so we manually build the query string
 	q := fmt.Sprintf("https://%s/main/web.cgi?%s", c.Host,
 		url.PathEscape("mo-info "+strings.Join(sections, " ; ")))
-	resp, err := c.httpClient.R().SetHeader("accept", "*/*").Get(q)
+	newContext, cancel := context.WithTimeout(c.ctx, time.Second*5)
+	defer cancel()
+	resp, err := c.httpClient.R().
+		SetContext(newContext).
+		SetHeader("accept", "*/*").Get(q)
 	if err != nil {
 		return data, err
 	}
@@ -168,7 +168,11 @@ func (c *Client) Command(cmds []string) (CommandReply, error) {
 		}
 		q += url.PathEscape(cmd)
 	}
-	resp, err := c.httpClient.R().SetHeader("accept", "*/*").Get(q)
+	newContext, cancel := context.WithTimeout(c.ctx, time.Second*5)
+	defer cancel()
+	resp, err := c.httpClient.R().
+		SetContext(newContext).
+		SetHeader("accept", "*/*").Get(q)
 	if err != nil {
 		return data, err
 	}
