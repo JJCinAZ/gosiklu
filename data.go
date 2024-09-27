@@ -19,6 +19,24 @@ type SikluData struct {
 	Mo      []Info `xml:"mo"`
 }
 
+func (s *SikluData) GetAttrValue(info, attribute string) string {
+	x, _ := s.GetAttr(info, attribute)
+	return x
+}
+
+func (s *SikluData) GetAttr(info, attribute string) (string, bool) {
+	for _, mo := range s.Mo {
+		if mo.Name == info {
+			for _, attr := range mo.Attr {
+				if attr.Name == attribute {
+					return attr.Value, true
+				}
+			}
+		}
+	}
+	return "", false
+}
+
 func (s *SikluData) GetInfoByName(name string) *Info {
 	for _, mo := range s.Mo {
 		if mo.Name == name {
