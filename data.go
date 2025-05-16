@@ -61,6 +61,17 @@ func (s *SikluData) GetInfoByType(typeName string) []Info {
 	return nil
 }
 
+func (i *Info) GetAttrValue(attribute string) string {
+	if i.Attr != nil {
+		for _, attr := range i.Attr {
+			if attr.Name == attribute {
+				return attr.Value
+			}
+		}
+	}
+	return ""
+}
+
 // CompareInfo compares two Info structs and returns true if they are the same
 // The comparison is done by comparing the Type, Name, and Attr fields
 // The two sets of Attributes must be the same length and have the same Name and Value

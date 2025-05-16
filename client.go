@@ -24,15 +24,15 @@ type CommandReply struct {
 }
 
 type Client struct {
-	Host                  string
-	User                  string
-	password, encodedPass string
-	logger                clientLogger
-	httpClient            *resty.Client
-	debugMode             bool
-	usesPasswordEncode    bool
-	cmdsAsBase64          bool
-	ctx                   context.Context
+	Host               string
+	User               string
+	password           string
+	logger             clientLogger
+	httpClient         *resty.Client
+	debugMode          bool
+	usesPasswordEncode bool
+	cmdsAsBase64       bool
+	ctx                context.Context
 }
 
 var (
@@ -60,12 +60,11 @@ func (c *Client) SetDebug(debug bool) *Client {
 // The host parameter should be an IP address or hostname of the radio
 func New(ctx context.Context, host, user, pass string) (*Client, error) {
 	c := &Client{
-		Host:        host,
-		User:        user,
-		password:    pass,
-		encodedPass: passwordEncode(pass),
-		logger:      clientLogger{},
-		ctx:         ctx,
+		Host:     host,
+		User:     user,
+		password: pass,
+		logger:   clientLogger{},
+		ctx:      ctx,
 	}
 	// Siklu web server only does an insecure cipher, so we have to force that here
 	// also need to skip verification of certificates and allow older TLS versions
@@ -92,7 +91,7 @@ func (c *Client) login() error {
 	newContext, cancel := context.WithTimeout(c.ctx, DefaultSikluTimeout)
 	defer cancel()
 	resp, err := c.httpClient.R().
-		SetContext(newContext).Get(fmt.Sprintf("https://%s/", c.Host))
+		SetContext(newContext).Get(fmt.Sprintf("https://%s/main/logout", c.Host))
 	if err != nil {
 		return errors.Join(errors.New("unable to reach radio"), err)
 	}
@@ -105,15 +104,20 @@ func (c *Client) login() error {
 		// Maybe an EH1200/710 which takes the password as encoded but commands as plaintext
 		c.usesPasswordEncode = true
 		c.cmdsAsBase64 = false
-		pass = c.encodedPass
+		pass = passwordEncode(c.password)
+	} else if bytes.Contains(resp.Body(), []byte("btoa(password)")) {
+		// Maybe an EH8010 which takes the password as encoded
+		c.usesPasswordEncode = true
+		c.cmdsAsBase64 = false
+		pass = base64.StdEncoding.EncodeToString([]byte(c.password))
 	} else if bytes.Contains(resp.Body(), []byte("EH-614TX")) {
 		// EH614 which takes the password and commands as plaintext
 		c.usesPasswordEncode = false
 		c.cmdsAsBase64 = false
 	} else {
-		// Maybe an EH8100 which takes the password as plaintext but commands as base64
+		// Default to password and plaintext commands
 		c.usesPasswordEncode = false
-		c.cmdsAsBase64 = true
+		c.cmdsAsBase64 = false
 	}
 	resp, err = c.httpClient.R().
 		SetContext(newContext).
